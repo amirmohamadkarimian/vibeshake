@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --grape-riot: #3A0CA3;
+  --neon-coral: #FF4D6D;
+  --banana-pop: #FFD60A;
+  --sugar-white: #FFF5F7;
+  --midnight-berry: #1A0050;
+  --lilac-mist: #C77DFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--sugar-white);
+  overflow-x: hidden;
+}
+
+/* ── Blob animations ── */
+@keyframes blob-morph-1 {
+  0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) scale(1); }
+  33%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(-20px, 15px) scale(1.05); }
+  66%  { border-radius: 50% 30% 60% 50% / 30% 70% 40% 60%; transform: translate(10px, -10px) scale(0.97); }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) scale(1); }
+}
+
+@keyframes blob-morph-2 {
+  0%   { border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; transform: translate(0, 0) scale(1); }
+  33%  { border-radius: 70% 30% 40% 60% / 60% 50% 40% 30%; transform: translate(15px, -20px) scale(1.08); }
+  66%  { border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%; transform: translate(-10px, 5px) scale(0.95); }
+  100% { border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; transform: translate(0, 0) scale(1); }
+}
+
+@keyframes blob-morph-3 {
+  0%   { border-radius: 50% 50% 40% 60% / 30% 60% 40% 70%; transform: translate(0, 0) scale(1); }
+  50%  { border-radius: 60% 40% 70% 30% / 60% 40% 60% 40%; transform: translate(20px, 20px) scale(1.1); }
+  100% { border-radius: 50% 50% 40% 60% / 30% 60% 40% 70%; transform: translate(0, 0) scale(1); }
+}
+
+/* ── Float ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50%       { transform: translateY(-22px) rotate(2deg); }
+}
+
+/* ── Pop-in badge ── */
+@keyframes pop-in {
+  0%   { transform: scale(0.4) rotate(-8deg); opacity: 0; }
+  70%  { transform: scale(1.1) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* ── Stagger fade up (via JS class toggle) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Navbar glass ── */
+.nav-glass {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(26, 0, 80, 0.75);
+  transition: background 0.3s ease;
+}
+
+/* ── Menu card tilt ── */
+.menu-card {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.45s ease;
+}
+.menu-card:hover {
+  transform: scale(1.04) rotate(-0.5deg);
+  box-shadow: 0 20px 50px rgba(255, 77, 109, 0.25);
+}
+
+/* ── Why Us card hover ── */
+.why-card {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.45s ease;
+}
+.why-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Menu card image zoom ── */
+.menu-card img {
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.menu-card:hover img {
+  transform: scale(1.07);
+}
+
+/* ── Testimonial tilt ── */
+.testimonial-card {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.45s ease;
+}
+.testimonial-card:hover {
+  transform: perspective(800px) rotateY(-5deg) rotateX(3deg) scale(1.03);
+  box-shadow: 0 16px 40px rgba(58, 12, 163, 0.2);
+}
+
+/* ── Wave dividers ── */
+.wave-top {
+  clip-path: ellipse(100% 60% at 50% 40%);
+}
+
+/* ── Heading font ── */
+.font-fredoka {
+  font-family: 'Fredoka One', cursive;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
