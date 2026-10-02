@@ -6,7 +6,7 @@ const shakes = [
     name: 'Berry Bliss',
     tag: 'Fan Favorite 🍓',
     tagColor: '#FF4D6D',
-    img: '/images/shake_strawberry.jpg',
+    img: `${import.meta.env.BASE_URL}images/shake_strawberry.jpg`,
     desc: 'Fresh strawberries, vanilla cream, and a swirl of berry magic.',
   },
   {
@@ -14,7 +14,7 @@ const shakes = [
     name: 'Dark Obsession',
     tag: "Chef\u2019s Pick 🍫",
     tagColor: '#3A0CA3',
-    img: '/images/shake_choco.jpg',
+    img: `${import.meta.env.BASE_URL}images/shake_choco.jpg`,
     desc: 'Triple chocolate, crushed Oreo, and dark cocoa drizzle.',
   },
   {
@@ -22,7 +22,7 @@ const shakes = [
     name: 'Mango Fever',
     tag: 'Tropical Hit 🥭',
     tagColor: '#FFD60A',
-    img: '/images/shake_mango.jpg',
+    img: `${import.meta.env.BASE_URL}images/shake_mango.jpg`,
     desc: 'Sun-ripened Alphonso mango whipped into creamy perfection.',
   },
   {
@@ -30,7 +30,7 @@ const shakes = [
     name: 'Oreo Storm',
     tag: 'Best Seller 🌪️',
     tagColor: '#C77DFF',
-    img: '/images/shake_oreo.jpg',
+    img: `${import.meta.env.BASE_URL}images/shake_oreo.jpg`,
     desc: 'Cookies & cream, vanilla ice cream, and a cookie crown.',
   },
 ]

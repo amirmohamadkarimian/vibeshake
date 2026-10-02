@@ -114,7 +114,7 @@ export default function Hero() {
         {/* Right — hero shake */}
         <div className="relative flex justify-center items-center">
           <img
-            src="/images/hero_shake.png"
+            src={`${import.meta.env.BASE_URL}images/hero_shake.png`}
             alt="Signature VibeShake strawberry milkshake"
             className="relative z-10 w-72 md:w-96 object-contain drop-shadow-2xl"
             style={{ animation: 'float 4s ease-in-out infinite' }}

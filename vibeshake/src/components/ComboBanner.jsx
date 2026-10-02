@@ -87,7 +87,7 @@ export default function ComboBanner() {
           {/* Right image + badge */}
           <div className="relative flex justify-center">
             <img
-              src="/images/combo_shake.jpg"
+              src={`${import.meta.env.BASE_URL}images/combo_shake.jpg`}
               alt="Two VibeShakes combo deal"
               className="w-80 md:w-96 object-contain drop-shadow-2xl rounded-2xl"
             />
